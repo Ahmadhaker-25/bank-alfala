@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Alfalah Header</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+
+        .top-menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8f8f8;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 8px 60px;
+            font-size: 14px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            height: 40px;
+
+        }
+
+        .top-menu .left-menu a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #000;
+            font-weight: normal;
+            padding: 10px;
+            font-size: 17px;
+        }
+
+        .top-menu .left-menu a.active {
+            font-weight: bold;
+            color: red;
+        }
+
+        .top-menu .right-menu a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #000;
+            font-weight: normal;
+            padding: 10px;
+            font-size: 17px;
+        }
+
+        .top-menu .right-menu i {
+            margin-right: 5px;
+            color: #555;
+
+        }
+
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 60px;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            position: sticky;
+            top: 40px;
+            z-index: 999;
+
+
+        }
+
+        .main-header .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .main-header .logo img {
+            width: 30px;
+            margin-right: 8px;
+            height: 30px;
+            object-fit: contain;
+
+            transition: transform 0.3s;
+            cursor: pointer;
+
+        }
+
+        .main-header .logo h1 {
+            font-size: 18px;
+            margin: 0;
+            color: #333;
+            font-weight: normal;
+        }
+
+        .main-header .search {
+            color: #b00;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .main-header .search i {
+            font-size: 20px;
+        }
+
+        .main-header .search:hover {
+            color: #800000;
+        }
+
+        .main-header .logo img:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s;
+        }
+
+        .main-header .logo h1:hover {
+            color: #800000;
+            transition: color 0.3s;
+
+        }
+
+        .top-menu .left-menu a:hover,
+        .top-menu .right-menu a:hover {
+            color: #800000;
+            transition: color 0.3s;
+
+        }
+
+        .hero {
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+            padding: 0px 100px;
+            /* background: linear-gradient(to right, #fff 60%, #d71920 60%); */
+            /* min-height: 90vh; */
+            overflow: hidden;
+
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 40px;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            color: #c8102e;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        .hero-text p {
+            line-height: 1.6;
+            font-size: 16px;
+            color: #444;
+            margin-bottom: 35px;
+        }
+
+        .hero-text .btn {
+            background: rgb(200, 16, 46);
+            color: #fff;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: 0.3s ease;
+            height: 45px;
+            font-weight: 600;
+            font-size: 18px;
+            box-shadow: 0 4px 12px rgba(200, 10, 30, 0.3);
+            background: linear-gradient(90deg, #c8102e, #a10d24);
+            box-shadow: 0 4px 12px rgba(200, 10, 30, 0.4);
+        }
+
+        .hero-text .btn:hover {
+            background: #a10d24;
+        }
+
+        .hero-text .btn i {
+            margin-left: 10px;
+            transition: 0.3s;
+            font-size: 18px;
+            font-weight: 600;
+            color: #fff;
+
+        }
+
+        .hero-text .btn:hover i {
+            transform: translateX(4px);
+            transition: 0.3s;
+            color: #fff;
+                    
+
+
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 85%;
+            max-width: 600px;
+            height: 600px;
+            object-fit: cover;
+            height: auto;
+            
+        }
+
+        @media (max-width: 992px) {
+            .hero {
+                flex-direction: column;
+                padding: 60px 40px;
+                background: #fff;
+            }
+
+            .hero-text {
+                text-align: center;
+                padding: 0;
+            }
+
+            .hero-image img {
+                width: 90%;
+                margin-top: 30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .main-header,
+            .top-menu {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px 20px;
+            }
+
+            .main-header .logo h1 {
+                font-size: 16px;
+            }
+
+            .hero {
+                padding: 40px 20px;
+            }
+
+            .hero-text h1 {
+                font-size: 32px;
+            }
+
+            .hero-text p {
+                font-size: 14px;
+            }
+
+            .hero-text .btn {
+                font-size: 14px;
+                padding: 12px 25px;
+                height: 40px;
+            }
+
+            .hero-image img {
+                width: 100%;
+                max-width: none;
+            }
+        }
+
+        .bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            /* opacity: 0.1; */
+            
+
+        }
+        .marquee-content {
+           background-color:#fa2718;
+            color: #fff;
+            padding: 8px 0;
+            font-size: 16px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: -55px;
+          
+
+            
+        }
+        body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fff;
+      color: #333;
+    }
+
+    .container {
+      width: 90%;
+      margin: 60px auto;
+    }
+
+    h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: #222;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      flex: 1;
+      min-width: 250px;
+      padding: 30px 25px;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+    }
+
+    .card img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      color: #000;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .card p {
+      font-size: 15px;
+      line-height: 1.5;
+      color: #555;
+      margin-bottom: 25px;
+    }
+
+    .learn-btn {
+      display: inline-block;
+      text-decoration: none;
+      color: #e00000;
+      border: 1px solid #e00000;
+      padding: 10px 22px;
+      border-radius: 30px;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    .learn-btn:hover {
+      background: #e00000;
+      color: #fff;
+    }
+
+    @media(max-width: 900px) {
+      .card-container {
+        flex-direction: column;
+      }
+    }
+    section.containe {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 0;
+      gap: 40px;
+        flex-wrap: wrap;
+        background: #f9f9f9;
+        border-radius: 12px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        /* padding: 10px 50px; */
+        margin: 60px auto;
+        width: 100%;
+        /* max-width: 1200px;    */
+        box-sizing: border-box;
+
+    
+
+    }
+    .text-section {
+      flex: 1;
+    }
+    .text-section h1 {
+      font-size: 31px;
+      color: #0a0a0a;
+      font-weight: 800;
+      margin-bottom: 20px;
+        line-height: 1.2;
+        max-width: 600px;
+        padding: 20px;
+
+    }
+    .text-section p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #444;
+      /* margin-bottom: 30px; */
+        /* max-width: 600px; */
+
+        padding: 30px;
+    }
+    .text-section h3 {
+      font-size: 20px;
+      color: #222;
+      margin-bottom: 15px;
+      font-weight: 700;
+        padding: 20px;   
+        max-width: 600px;
+
+
+    }
+    .features {
+      list-style-type:symbols('✔️'); ;
+      /* padding-left: 20px; */
+      color: #555;
+        max-width: 600px;
+        /* padding: 20px; */
+        /* margin-bottom: 20px; */
+        line-height: 1.5;
+        font-size: 16px;
+
+    }
+    .features li {
+      margin-bottom: 10px;
+      font-size: 15px;
+      line-height: 1.5;
+        /* color: #555;  */
+        font-weight: 500;
+
+
+    }
+    .image-section {
+      flex: 1;
+      text-align: center;
+        padding: 20px;
+        /* background: #fff; */
+        border-radius: 12px;
+        
+
+    }
+    .image-section img {
+      width: 100%;
+      max-width:700px;
+      height: 600px;
+      /* border-radius: 12px; */
+      /* box-shadow: 0 4px 12px rgba(0,0,0,0.1); */
+        transition: transform 0.3s ease;
+
+
+    }
+    button {
+      background: rgb(247, 244, 244);
+      color: #e00000;
+      padding: 15px 35px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      transition: 0.3s ease;
+      height: 45px;
+      font-weight: 600;
+      font-size: 18px;
+      /* box-shadow: 0 4px 12px rgba(200, 10, 30, 0.3); */
+      /* background: linear-gradient(90deg, #c8102e, #a10d24); */
+      box-shadow: 0 4px 12px rgba(200, 10, 30, 0.4);
+      margin-bottom: 40px;
+        margin-top: 20px;
+        margin-left: 20px;
+        font-weight: 500;
+        border: 1px solid #e00000;
+        /* background: #e00000; */
+        /* color: #fff; */
+
+
+    }
+    button:hover {
+      background: #e00000;
+
+        color: #fff;
+
+    }
+    @media (max-width: 900px) {     
+        .top-menu {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 10px 20px;
+            height: auto;
+        }
+        .top-menu .left-menu,
+        .top-menu .right-menu {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .top-menu .left-menu a,
+        .top-menu .right-menu a {
+            margin: 5px 0;
+            padding: 8px 0;
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width: 900px) {
+        .image-section {
+            padding: 10px;
+            max-width: 100%;
+        }
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+        }
+        section.containe {
+            flex-direction: column;
+            padding: 30px 0;
+            gap: 20px;
+        }
+        .text-section {
+            padding: 10px;
+            max-width: 100%;
+        }
+    }
+
+    </style>
+</head>
+
+<body>
+
+
+    <div class="top-menu">
+        <div class="left-menu">
+            <a href="#" class="active">Personal</a>
+            <a href="#">Business</a>
+            <a href="#">Islamic</a>
+            <a href="#">Premier</a>
+        </div>
+        <div class="right-menu">
+            <a href="#">About</a>
+            <a href="#">Deals & Discount</a>
+            <a href="#">Careers</a>
+            <a href="#"><i class="fa-solid fa-globe"></i> Pakistan</a>
+            <a href="#"><i class="fa-solid fa-location-dot"></i> Branch locator</a>
+            <a href="#"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+        </div>
+    </div>
+
+
+    <div class="main-header">
+        <div class="logo">
+            <img src="download.jpg" alt="Bank Alfalah Logo">
+            <h1>Bank Alfalah</h1>
+        </div>
+        <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+    </div>
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Pakistan's Best Bank for<br>Digital Banking</h1>
+            <img src="conventional-back.webp" alt="" class="bg">
+            <p>
+                Enjoy financial freedom with Pakistan's best digital banking experience.
+                Save and grow your wealth through deposits, mutual funds, stocks, and government securities.
+                Finance your dream home, car, business, or agricultural needs with ease. Access our award-winning
+                Alfa app, the country’s largest digital network of 24/7 CDMs, ATMs, and extensive payment acceptance
+                points.
+                Unlock lifestyle privileges; enjoy exclusive dining discounts, global lounge access, and more.
+            </p>
+            <a href="#" class="btn">Open Account <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="hero-image">
+            <img src="Main-Banner-Conventional-26_Sep_2025.gif" alt="Digital Banking">
+        </div>
+    </section>
+    <div class="marquee-content">
+        <marquee  direction="left" loop="infinite" scrollamount="6">
+           >>> Lorem ipsum dolor sit amet consectetur,> adipisicing elit. Non, aspernatur! |    
+
+            Lorem ipsum dolor sit amet> consectetur, adipisicing elit. Non, aspernatur! |
+
+            Lorem ipsum dolor sit amet > consectetur, adipisicing elit. Non, aspernatur! |
+
+            Lorem ipsum dolor sit amet consectetur >, adipisicing elit. Non, aspernatur! |>>>
+        </marquee>
+    </div>
+
+ <div class="container">
+    <h2>Banking Solutions</h2>
+    <div class="card-container">
+
+      <div class="card">
+        <img src="Car-loan.png" alt="Accounts">
+        <h3>Accounts, Alfa & Debit Cards</h3>
+        <p>Open an account to unlock Pakistan’s leading digital banking experience and exclusive features of Alfa and Debit Cards.</p>
+        <a href="#" class="learn-btn">Learn more →</a>
+      </div>
+
+      <div class="card">
+        <img src="Cards.png " alt="Credit Card">
+        <h3>Credit Cards</h3>
+        <p>Break free from all financial boundaries, get exclusive American Express Card & enjoy the highest discounts and the best deals.</p>
+        <a href="#" class="learn-btn">Learn more →</a>
+      </div>
+
+      <div class="card">
+        <img src="Personal-Loan.png" alt="Personal Loan">
+        <h3>Personal Loan</h3>
+        <p>Need extra funds quickly?</p>
+        <a href="#" class="learn-btn">Learn more →</a>
+      </div>
+
+      <div class="card">
+        <img src="Car-loan.png" alt="Car Finance">
+        <h3>Car Finance</h3>
+        <p>Book your dream car on Buy-Now, Pay-Later facility.</p>
+        <a href="#" class="learn-btn">Learn more →</a>
+      </div>
+      <div class="card-container">
+
+      <div class="card">
+        <img src="Home-finance.png" alt="Accounts">
+        <h3>Home Finance</h3>
+        <p>Open an account to unlock Pakistan’s leading digital banking experience and exclusive features of Alfa and Debit Cards.</p>
+        <a href="#" class="learn-btn">Learn more →</a>
+      </div>
+
+      <div class="card">
+        <img src="Alfa.png" alt="Credit Card">
+        <h3>Wealth Management</h3>
+        <p>Break free from all financial boundaries, get exclusive American Express Card & enjoy the highest discounts and the best deals.</p>
+        <a href="#" class="learn-btn">Learn more →</a>
+      </div>
+
+      <div class="card">
+        <img src="Alfamall.png" alt="Personal Loan">
+        <h3>Alfa Mall</h3>
+        <p>Need extra funds quickly?</p>
+        <a href="#" class="learn-btn">Learn more →</a>
+      </div>
+
+      <div class="card">
+        <img src="Digital-Banking.png" alt="Car Finance">
+        <h3>Roshan Digital Account</h3>
+        <p>Book your dream car on Buy-Now, Pay-Later facility.</p>
+        <a href="#" class="learn-btn">Learn more →</a>
+      </div>
+
+
+    </div>
+  </div>
+   <section class="containe">
+    <div class="text-section">
+      <h1>Bank Smarter with the Alfa App</h1>
+      <p>
+        Your all in one digital banking lifestyle app. Make digital transactions,
+        investments, or apply for cards anytime, anywhere. With instant financing
+        and secure access to a full suite of services, Alfa puts complete banking
+        convenience in your hands.
+      </p>
+
+      <h3>Features</h3>
+      <ul class="features">
+        <li>Invest digitally in mutual funds and term deposits with just a few taps.</li>
+        <li>Apply instantly for debit and credit cards without visiting a branch.</li>
+        <li>Get real-time financing solutions for quick and convenient access to funds.</li>
+        <li>Manage all your banking needs (instant transfers via RAAST & payments to 4,000+ billers) in one app.</li>
+      </ul>
+      <button>learn more </button>
+    </div>
+    
+    
+    <div class="image-section">
+        <img src="Card-Issuance-3.gif" alt="Alfa App Screenshot" />
+    </div>
+</section>
+  
+</body>
+
+</html>
